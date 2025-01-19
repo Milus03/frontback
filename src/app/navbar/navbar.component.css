@@ -1,0 +1,36 @@
+.navbar-main {
+    background-color: #444;
+    padding: 18px 0;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
+  .navbar-logo {
+    color: #e0e0e0;
+    font-size: 26px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  
+  .nav-links {
+    display: flex;
+  }
+  
+  .nav-item {
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 0 18px;
+    font-size: 20px;
+    transition: color 0.4s ease;
+  }
+  
+  .nav-item:hover {
+    color: #d35400;
+  }
+  

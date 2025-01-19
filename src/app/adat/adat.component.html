@@ -1,0 +1,85 @@
+<div class="container mt-4">
+  <h2>Termékek kezelése</h2>
+
+  <h3>Új termék hozzáadása</h3>
+  <form (ngSubmit)="createProduct()">
+    <div class="form-group">
+      <label for="name">Név</label>
+      <input id="name" [(ngModel)]="newProduct.name" name="name" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="cuisine">Konyha</label>
+      <input id="cuisine" [(ngModel)]="newProduct.cuisine" name="cuisine" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="ingredients">Hozzávalók</label>
+      <input id="ingredients" [(ngModel)]="newProduct.ingredients" name="ingredients" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="instructions">Elkészítés</label>
+      <input id="instructions" [(ngModel)]="newProduct.instructions" name="instructions" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="image_url">Kép URL</label>
+      <input id="image_url" [(ngModel)]="newProduct.image_url" name="image_url" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Hozzáadás</button>
+  </form>
+
+  <h3 class="mt-4">Termékek</h3>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Név</th>
+        <th>Konyha</th>
+        <th>Hozzávalók</th>
+        <th>Elkészítés</th>
+        <th>Kép</th>
+        <th>Akciók</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of data">
+        <td>{{ data.id }}</td>
+        <td>{{ data.name }}</td>
+        <td>{{ data.cuisine }}</td>
+        <td>{{ data.ingredients }}</td>
+        <td>{{ data.instructions }}</td>
+        <td><img [src]="data.image_url" alt="{{ data.name }}" width="150" /></td>
+        <td>
+          <button class="btn btn-warning" (click)="startEdit(data)">Szerkesztés</button>
+          <button class="btn btn-danger" (click)="deleteProduct(data.id)">Törlés</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="isEditMode" class="mt-4">
+    <h3>Szerkesztés: {{ editProduct.name }}</h3>
+    <form (ngSubmit)="updateProduct()">
+      <div class="form-group">
+        <label for="edit-name">Név</label>
+        <input id="edit-name" [(ngModel)]="editProduct.name" name="name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="edit-cuisine">Konyha</label>
+        <input id="edit-cuisine" [(ngModel)]="editProduct.cuisine" name="cuisine" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="edit-ingredients">Hozzávalók</label>
+        <input id="edit-ingredients" [(ngModel)]="editProduct.ingredients" name="ingredients" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="edit-instructions">Elkészítés</label>
+        <input id="edit-instructions" [(ngModel)]="editProduct.instructions" name="instructions" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="edit-image_url">Kép URL</label>
+        <input id="edit-image_url" [(ngModel)]="editProduct.image_url" name="image_url" class="form-control">
+      </div>
+      <button type="button" class="btn btn-secondary mt-2" (click)="patch()">Frissítés</button>
+    </form>
+  </div>
+</div>

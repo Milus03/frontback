@@ -1,0 +1,323 @@
+/* Alapértelmezett reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(to right, #1c1c1c, #34495e);
+    color: #ecf0f1;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease-in-out;
+    height: 100%;
+    margin: 0;
+  }
+  
+  h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  h2 {
+    color: #f39c12;
+    font-size: 5rem;
+    text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+    animation: bounceInDown 1s ease-out;
+  }
+  
+  h3 {
+    font-size: 2.5rem;
+    color: #ecf0f1;
+    margin-top: 30px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    animation: bounceInLeft 1s ease-out;
+  }
+  
+
+  .container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px;
+    background: #2c3e50;
+    border-radius: 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-out;
+    transition: all 0.3s ease;
+  }
+  
+  .container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  }
+
+  .form-group {
+    margin-bottom: 25px;
+  }
+  
+  .form-group label {
+    font-size: 1.2rem;
+    color: #ecf0f1;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.1rem;
+    color: #34495e;
+    border: 2px solid #7f8c8d;
+    border-radius: 12px;
+    background: #ecf0f1;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+  }
+  
+
+  button {
+    padding: 14px 35px;
+    font-size: 1.3rem;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  button:active {
+    transform: scale(0.98);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.6);
+  }
+  
+  /* Hover és animációk */
+  @keyframes bounceInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-2000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes bounceInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-2000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(30px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes shake {
+    0% {
+      transform: translateX(-5px);
+    }
+    25% {
+      transform: translateX(5px);
+    }
+    50% {
+      transform: translateX(-5px);
+    }
+    75% {
+      transform: translateX(5px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    animation: tableAppearance 1s ease-out;
+  }
+  
+  table th, table td {
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  table th {
+    background-color: #2980b9;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #ecf0f1;
+  }
+  
+  table tr:nth-child(odd) {
+    background-color: #bdc3c7;
+  }
+  
+  table tr:hover {
+    background-color: #3498db;
+    color: #fff;
+    transform: scale(1.02);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  table td img {
+    width: 120px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  table td img:hover {
+    transform: scale(1.2);
+  }
+  
+  @keyframes tableAppearance {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+
+  .card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .card img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Scroll Animáció */
+  @keyframes scrollAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .scroll-reveal {
+    animation: scrollAnimation 1s ease-out;
+  }
+  
+  /* Szerkesztés gombok */
+  button[type="button"] {
+    padding: 14px 30px;
+    font-size: 1.3rem;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button[type="button"]:hover {
+    background-color: #e67e22;
+    transform: scale(1.1);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  button[type="button"]:active {
+    transform: scale(0.98);
+  }
+  
+  button[type="button"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.6);
+  }
+  
+  /* Floating Button */
+  .floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2ecc71;
+    color: white;
+    padding: 16px 25px;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .floating-button:hover {
+    background-color: #27ae60;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+  }
+  
